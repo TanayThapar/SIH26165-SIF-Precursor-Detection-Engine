@@ -4,6 +4,12 @@
 > **"Detecting the fracture before the failure."**  
 > *"The absence of injury does not imply the absence of fatal potential."*
 
+[![Vercel Deployment](https://img.shields.io/badge/Vercel-Live%20Website-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://faultline-sif.vercel.app)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/TanayThapar/SIH26165-SIF-Precursor-Detection-Engine)
+
+**Live Production URL:** [https://faultline-sif.vercel.app](https://faultline-sif.vercel.app)  
+**CI/CD Integration:** Automatically continuously deployed to Vercel on every `git push` to `main`.
+
 ---
 
 ## 1. Product Overview
