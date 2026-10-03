@@ -1,14 +1,30 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FaultLine — SIF Precursor Detection Engine | Oil India Limited</title>
     <meta name="description" content="FaultLine AI: Neuro-symbolic decision-support engine for detecting Serious Injury &amp; Fatality (SIF) precursors in Oil &amp; Gas safety reports. Smart India Hackathon SIH26165 — Oil India Limited." />
-    <meta name="theme-color" content="#12171f" />
+    <meta name="theme-color" content="#000000" />
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('faultline_theme');
+          if (saved === 'light') {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+          } else {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+          }
+        } catch (e) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
-  <body>
+  <body class="bg-black text-slate-100">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

@@ -139,7 +139,7 @@ export const AppShell: React.FC = () => {
   const pageInfo = getPageInfo();
 
   return (
-    <div className="min-h-screen flex bg-canvas text-graphite-900 font-sans">
+    <div className="min-h-screen flex bg-canvas dark:bg-black text-graphite-900 dark:text-slate-100 font-sans transition-colors duration-200">
       {/* Mobile Menu Backdrop */}
       {mobileMenuOpen && (
         <div
@@ -150,7 +150,7 @@ export const AppShell: React.FC = () => {
 
       {/* LEFT NAVIGATION RAIL */}
       <aside
-        className={`fixed inset-y-0 left-0 z-40 w-64 bg-graphite-950 text-slate-300 border-r border-graphite-800 flex flex-col transition-transform duration-200 ease-in-out lg:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-40 w-64 bg-graphite-950 dark:bg-black text-slate-300 border-r border-graphite-800 dark:border-[#1E2736] flex flex-col transition-transform duration-200 ease-in-out lg:translate-x-0 ${
           mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
@@ -269,27 +269,27 @@ export const AppShell: React.FC = () => {
       {/* MAIN CONTENT AREA */}
       <div className="flex-1 flex flex-col min-w-0 lg:pl-64">
         {/* GLOBAL PERSISTENT PROVENANCE BANNER */}
-        <div className="bg-amber-500/10 border-b border-amber-500/30 px-4 py-1.5 text-xs text-amber-900 flex items-center justify-between gap-3 shrink-0">
+        <div className="bg-amber-500/10 dark:bg-amber-950/20 border-b border-amber-500/30 dark:border-amber-500/20 px-4 py-1.5 text-xs text-amber-900 dark:text-amber-300 flex items-center justify-between gap-3 shrink-0">
           <div className="flex items-center gap-2">
-            <ShieldAlert className="w-3.5 h-3.5 text-amber-700 shrink-0" />
-            <span className="font-semibold text-[11px] uppercase tracking-wide text-amber-800">
+            <ShieldAlert className="w-3.5 h-3.5 text-amber-700 dark:text-amber-400 shrink-0" />
+            <span className="font-semibold text-[11px] uppercase tracking-wide text-amber-800 dark:text-amber-300">
               Demo Environment:
             </span>
-            <span className="text-[11px] text-amber-950">
+            <span className="text-[11px] text-amber-950 dark:text-amber-200">
               Operating on realistic synthetic safety reports — not Oil India operational live data.
             </span>
           </div>
           <button
             type="button"
             onClick={() => setIsBackendModalOpen(true)}
-            className="text-[10px] font-semibold text-amber-800 hover:text-amber-950 underline underline-offset-2 shrink-0 flex items-center gap-0.5"
+            className="text-[10px] font-semibold text-amber-800 dark:text-amber-300 hover:text-amber-950 dark:hover:text-amber-100 underline underline-offset-2 shrink-0 flex items-center gap-0.5"
           >
             Adapter Settings <ExternalLink className="w-2.5 h-2.5" />
           </button>
         </div>
 
         {/* TOP CONTEXTUAL BAR */}
-        <header className="bg-surface border-b border-surface-border sticky top-0 z-30 px-4 py-3 shadow-panel">
+        <header className="bg-surface dark:bg-black border-b border-surface-border dark:border-[#1E2736] sticky top-0 z-30 px-4 py-3 shadow-panel">
           <div className="flex items-center justify-between gap-4">
             {/* Title & Hamburger */}
             <div className="flex items-center gap-3 min-w-0">
@@ -402,7 +402,7 @@ export const AppShell: React.FC = () => {
         </header>
 
         {/* WORKSPACE OUTLET */}
-        <main className="flex-1 p-4 md:p-6 overflow-y-auto">
+        <main className="flex-1 p-4 md:p-6 overflow-y-auto bg-canvas dark:bg-black transition-colors duration-200">
           <Outlet />
         </main>
       </div>

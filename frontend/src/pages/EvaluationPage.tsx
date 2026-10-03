@@ -305,14 +305,14 @@ export const EvaluationPage: React.FC = () => {
                       </div>
 
                       {/* True Negative */}
-                      <div className="p-4 rounded bg-slate-100 border border-slate-300">
-                        <span className="text-[10px] font-bold text-slate-800 uppercase block mb-1">
+                      <div className="p-4 rounded bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-800">
+                        <span className="text-[10px] font-bold text-slate-800 dark:text-slate-300 uppercase block mb-1">
                           True Negative (Baseline)
                         </span>
-                        <span className="text-2xl font-black text-slate-900 font-mono">
+                        <span className="text-2xl font-black text-slate-900 dark:text-slate-100 font-mono">
                           {cm.trueNegative}
                         </span>
-                        <span className="text-[10px] text-slate-600 block mt-1">
+                        <span className="text-[10px] text-slate-600 dark:text-slate-400 block mt-1">
                           Specificity: 96.7%
                         </span>
                       </div>

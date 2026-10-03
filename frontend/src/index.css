@@ -18,19 +18,20 @@
     --card-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.05);
   }
 
+  html.dark,
   .dark {
-    --bg-canvas: #090C10;
-    --bg-canvas-subtle: #0E131A;
-    --bg-canvas-muted: #141B24;
-    --bg-surface: #111620;
-    --bg-surface-raised: #161D2A;
-    --bg-surface-sunken: #0B0E14;
-    --border-surface: #1F2837;
-    --border-surface-strong: #2D394C;
-    --text-primary: #F1F5F9;
+    --bg-canvas: #000000;
+    --bg-canvas-subtle: #05070A;
+    --bg-canvas-muted: #0B0E14;
+    --bg-surface: #090C10;
+    --bg-surface-raised: #0F141C;
+    --bg-surface-sunken: #000000;
+    --border-surface: #1E2736;
+    --border-surface-strong: #2E3C50;
+    --text-primary: #F8FAFC;
     --text-secondary: #94A3B8;
     --text-muted: #64748B;
-    --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.45), 0 1px 4px -1px rgba(0, 0, 0, 0.35);
+    --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.8), 0 1px 4px -1px rgba(0, 0, 0, 0.6);
   }
 
   body {
@@ -62,6 +63,29 @@
   }
 }
 
+/* Explicit true-black OLED dark mode enforcement */
+html.dark,
+html.dark body,
+.dark .bg-canvas {
+  background-color: #000000 !important;
+}
+
+html.dark .bg-surface {
+  background-color: #090C10 !important;
+}
+
+html.dark .bg-surface-sunken {
+  background-color: #000000 !important;
+}
+
+html.dark .bg-surface-raised {
+  background-color: #0F141C !important;
+}
+
+html.dark .border-surface-border {
+  border-color: #1E2736 !important;
+}
+
 /* Dark mode typography and structural enhancements */
 .dark .text-graphite-950,
 .dark .text-graphite-900 {
@@ -84,9 +108,9 @@
 .dark input,
 .dark select,
 .dark textarea {
-  background-color: var(--bg-surface-sunken) !important;
-  color: #F1F5F9 !important;
-  border-color: var(--border-surface) !important;
+  background-color: #000000 !important;
+  color: #F8FAFC !important;
+  border-color: #1E2736 !important;
 }
 
 .dark input::placeholder,
@@ -95,8 +119,9 @@
 }
 
 .dark thead {
-  background-color: rgba(11, 14, 20, 0.8) !important;
+  background-color: #05070A !important;
   color: #94A3B8 !important;
+  border-color: #1E2736 !important;
 }
 
 @layer utilities {

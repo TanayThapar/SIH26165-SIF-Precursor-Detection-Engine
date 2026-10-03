@@ -273,7 +273,7 @@ export const PrecursorGraphPage: React.FC = () => {
             Showing {layout.nodes.length} nodes • {layout.edges.length} high-lift edges
           </div>
 
-          <div className="w-full h-[560px] overflow-hidden flex items-center justify-center bg-slate-50/50 cursor-grab active:cursor-grabbing">
+          <div className="w-full h-[560px] overflow-hidden flex items-center justify-center bg-surface-sunken dark:bg-black cursor-grab active:cursor-grabbing">
             <svg
               width="100%"
               height="100%"

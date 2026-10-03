@@ -67,17 +67,17 @@ export const OutcomeMaskingDiff: React.FC<OutcomeMaskingDiffProps> = ({
 
       {/* Outcome removal badge callout */}
       {outcomePhraseRemoved && (
-        <div className="bg-amber-50/70 border-b border-amber-200 px-4 py-2 text-xs flex items-center justify-between gap-3">
-          <div className="flex items-center gap-2 text-amber-900">
-            <Sparkles className="w-3.5 h-3.5 text-amber-700 shrink-0" />
+        <div className="bg-amber-50/70 dark:bg-amber-950/20 border-b border-amber-200 dark:border-amber-800/40 px-4 py-2 text-xs flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2 text-amber-900 dark:text-amber-200">
+            <Sparkles className="w-3.5 h-3.5 text-amber-700 dark:text-amber-400 shrink-0" />
             <span>
               <strong className="font-semibold">Decoupled Outcome Bias Token:</strong>{' '}
-              <span className="font-mono bg-white px-2 py-0.5 rounded border border-amber-300 text-amber-950 font-medium">
+              <span className="font-mono bg-white dark:bg-black px-2 py-0.5 rounded border border-amber-300 dark:border-amber-700 text-amber-950 dark:text-amber-300 font-medium">
                 "{outcomePhraseRemoved}"
               </span>
             </span>
           </div>
-          <span className="text-[11px] text-amber-800">
+          <span className="text-[11px] text-amber-800 dark:text-amber-400">
             Masked from model attention to prevent false-negative safety bias
           </span>
         </div>
