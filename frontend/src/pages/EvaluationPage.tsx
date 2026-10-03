@@ -66,7 +66,7 @@ export const EvaluationPage: React.FC = () => {
   }
 
   return (
-    <div className="space-y-6 max-w-6xl mx-auto">
+    <div className="space-y-6 max-w-6xl mx-auto animate-slide-up">
       {/* HEADER WITH PROVENANCE HONESTY DISCLAIMER */}
       <div className="bg-surface rounded-lg border border-surface-border p-5 shadow-panel flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div className="flex items-start gap-3">

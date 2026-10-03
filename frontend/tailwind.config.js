@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -8,16 +9,16 @@ export default {
     extend: {
       colors: {
         canvas: {
-          DEFAULT: '#F4F5F7',
-          subtle: '#ECEFF2',
-          muted: '#E2E6EB',
+          DEFAULT: 'var(--bg-canvas)',
+          subtle: 'var(--bg-canvas-subtle)',
+          muted: 'var(--bg-canvas-muted)',
         },
         surface: {
-          DEFAULT: '#FFFFFF',
-          raised: '#FAFBFC',
-          sunken: '#EDF0F3',
-          border: '#DCE1E7',
-          'border-strong': '#CBD5E1',
+          DEFAULT: 'var(--bg-surface)',
+          raised: 'var(--bg-surface-raised)',
+          sunken: 'var(--bg-surface-sunken)',
+          border: 'var(--border-surface)',
+          'border-strong': 'var(--border-surface-strong)',
         },
         graphite: {
           950: '#0F1318',
@@ -97,9 +98,37 @@ export default {
         ],
       },
       boxShadow: {
-        panel: '0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.05)',
-        elevated: '0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.05)',
-        dropdown: '0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -4px rgba(15, 23, 42, 0.05)',
+        panel: 'var(--card-shadow)',
+        elevated: '0 8px 24px -4px rgba(0, 0, 0, 0.25), 0 3px 8px -2px rgba(0, 0, 0, 0.15)',
+        dropdown: '0 12px 28px -4px rgba(0, 0, 0, 0.35), 0 4px 10px -2px rgba(0, 0, 0, 0.2)',
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.22s ease-out forwards',
+        'slide-up': 'slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'pulse-subtle': 'pulseSubtle 2.5s ease-in-out infinite',
+        'radar-ping': 'radarPing 2s cubic-bezier(0, 0, 0.2, 1) infinite',
+        'seismic-pulse': 'seismicPulse 4s ease-in-out infinite',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { opacity: '0', transform: 'translateY(8px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        pulseSubtle: {
+          '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+          '50%': { opacity: '0.88', transform: 'scale(1.02)' },
+        },
+        radarPing: {
+          '75%, 100%': { transform: 'scale(2.2)', opacity: '0' },
+        },
+        seismicPulse: {
+          '0%, 100%': { opacity: '0.5' },
+          '50%': { opacity: '1' },
+        },
       },
     },
   },

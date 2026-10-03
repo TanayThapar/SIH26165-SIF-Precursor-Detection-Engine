@@ -131,7 +131,7 @@ export const HiddenRiskPage: React.FC = () => {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 animate-slide-up">
       {/* CONCEPT BANNER */}
       <div className="bg-surface rounded-lg border border-surface-border p-4 shadow-panel flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div className="flex items-start gap-3">
@@ -224,7 +224,7 @@ export const HiddenRiskPage: React.FC = () => {
         <div className="h-80 mt-4">
           <ResponsiveContainer width="100%" height="100%">
             <ScatterChart margin={{ top: 20, right: 30, bottom: 20, left: 10 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#E2E6EB" />
+              <CartesianGrid strokeDasharray="3 3" stroke="currentColor" strokeOpacity={0.12} />
               <XAxis
                 type="number"
                 dataKey="x"

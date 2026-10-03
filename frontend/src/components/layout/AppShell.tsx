@@ -23,6 +23,7 @@ import { useReportDrawer } from '../../context/DrawerContext';
 import { ReportDrawer } from '../reports/ReportDrawer';
 import { GlobalFilterDrawer } from '../filters/GlobalFilterDrawer';
 import { BackendSwitcherModal } from '../modals/BackendSwitcherModal';
+import { ThemeToggle } from '../ui/ThemeToggle';
 import { getDataMode } from '../../api/client';
 
 export const AppShell: React.FC = () => {
@@ -168,9 +169,12 @@ export const AppShell: React.FC = () => {
                   OIL INDIA
                 </span>
               </div>
-              <p className="text-[10px] text-petrol-400 font-medium tracking-tight">
-                SIF Precursor Detection Engine
-              </p>
+              <div className="flex items-center gap-1.5">
+                <p className="text-[10px] text-petrol-400 font-medium tracking-tight">
+                  SIF Precursor Detection Engine
+                </p>
+                <span className="w-1.5 h-1.5 rounded-full bg-petrol-400 animate-pulse" title="System operational" />
+              </div>
             </div>
           </div>
           <button
@@ -249,9 +253,14 @@ export const AppShell: React.FC = () => {
             <Server className="w-3.5 h-3.5 text-graphite-400 group-hover:text-petrol-400 transition-colors" />
           </button>
 
+          {/* Theme Mode Toggle (Night / Day) */}
+          <div className="pt-1">
+            <ThemeToggle compact={false} />
+          </div>
+
           {/* App Version */}
           <div className="pt-1 flex items-center justify-between text-[10px] text-graphite-500 font-mono">
-            <span>SIF Engine v1.0.0</span>
+            <span>FaultLine v1.0.0</span>
             <span>OIL-SIH26165</span>
           </div>
         </div>
@@ -292,17 +301,26 @@ export const AppShell: React.FC = () => {
                 <Menu className="w-5 h-5" />
               </button>
               <div className="min-w-0">
-                <h1 className="text-base font-bold text-graphite-950 truncate tracking-tight">
-                  {pageInfo.title}
-                </h1>
+                <div className="flex items-center gap-2">
+                  <h1 className="text-base font-bold text-graphite-950 truncate tracking-tight">
+                    {pageInfo.title}
+                  </h1>
+                  <div className="hidden sm:inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] font-mono text-emerald-600 dark:text-emerald-400 shrink-0">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    <span>ACTIVE MON</span>
+                  </div>
+                </div>
                 <p className="text-xs text-graphite-500 truncate">{pageInfo.subtitle}</p>
               </div>
             </div>
 
-            {/* Quick Actions & Search */}
-            <div className="flex items-center gap-2.5 shrink-0">
+            {/* Quick Actions, Theme Toggle & Search */}
+            <div className="flex items-center gap-2 shrink-0">
               {/* Quick Search */}
-              <div className="relative hidden md:block w-56">
+              <div className="relative hidden md:block w-52">
                 <Search className="w-3.5 h-3.5 text-graphite-400 absolute left-2.5 top-1/2 -translate-y-1/2" />
                 <input
                   type="text"
@@ -339,9 +357,12 @@ export const AppShell: React.FC = () => {
                 className="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 rounded border border-surface-border bg-surface text-xs font-medium text-graphite-700 hover:bg-surface-sunken transition-colors"
                 title="Configure Backend Adapter"
               >
-                <span className="w-2 h-2 rounded-full bg-operational-500" />
+                <span className="w-2 h-2 rounded-full bg-operational-500 animate-pulse" />
                 <span>{dataMode === 'api' ? 'Live API' : 'Mock'}</span>
               </button>
+
+              {/* Theme Mode Toggle (Compact) */}
+              <ThemeToggle compact={true} />
             </div>
           </div>
 

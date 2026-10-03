@@ -163,7 +163,7 @@ export const PrecursorGraphPage: React.FC = () => {
   }
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-5 animate-slide-up">
       {/* HEADER & CONTROLS TOOLBAR */}
       <div className="bg-surface rounded-lg border border-surface-border p-4 shadow-panel flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
         <div>
@@ -372,6 +372,8 @@ export const PrecursorGraphPage: React.FC = () => {
                         stroke="#228285"
                         strokeWidth="3"
                         strokeDasharray="4 2"
+                        className="animate-spin origin-center"
+                        style={{ animationDuration: '12s' }}
                       />
                     )}
 

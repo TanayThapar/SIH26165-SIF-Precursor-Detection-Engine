@@ -5,10 +5,32 @@
 @layer base {
   :root {
     --bg-canvas: #F4F5F7;
+    --bg-canvas-subtle: #ECEFF2;
+    --bg-canvas-muted: #E2E6EB;
+    --bg-surface: #FFFFFF;
+    --bg-surface-raised: #FAFBFC;
+    --bg-surface-sunken: #EDF0F3;
+    --border-surface: #DCE1E7;
+    --border-surface-strong: #CBD5E1;
     --text-primary: #151921;
     --text-secondary: #485669;
     --text-muted: #64748B;
-    --border-color: #DCE1E7;
+    --card-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.05);
+  }
+
+  .dark {
+    --bg-canvas: #090C10;
+    --bg-canvas-subtle: #0E131A;
+    --bg-canvas-muted: #141B24;
+    --bg-surface: #111620;
+    --bg-surface-raised: #161D2A;
+    --bg-surface-sunken: #0B0E14;
+    --border-surface: #1F2837;
+    --border-surface-strong: #2D394C;
+    --text-primary: #F1F5F9;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+    --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.45), 0 1px 4px -1px rgba(0, 0, 0, 0.35);
   }
 
   body {
@@ -20,6 +42,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     min-height: 100vh;
+    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
   }
 
   /* Custom scrollbar for dense industrial data tables and side panels */
@@ -28,20 +51,76 @@
     height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #EDF0F3;
+    background: var(--bg-surface-sunken);
   }
   ::-webkit-scrollbar-thumb {
-    background: #CBD5E1;
+    background: var(--border-surface-strong);
     border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #94A3B8;
+    background: #64748B;
   }
+}
+
+/* Dark mode typography and structural enhancements */
+.dark .text-graphite-950,
+.dark .text-graphite-900 {
+  color: #F8FAFC !important;
+}
+
+.dark .text-graphite-800,
+.dark .text-graphite-700 {
+  color: #CBD5E1 !important;
+}
+
+.dark .text-graphite-600 {
+  color: #94A3B8 !important;
+}
+
+.dark .text-graphite-500 {
+  color: #64748B !important;
+}
+
+.dark input,
+.dark select,
+.dark textarea {
+  background-color: var(--bg-surface-sunken) !important;
+  color: #F1F5F9 !important;
+  border-color: var(--border-surface) !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #475569 !important;
+}
+
+.dark thead {
+  background-color: rgba(11, 14, 20, 0.8) !important;
+  color: #94A3B8 !important;
 }
 
 @layer utilities {
   .font-mono-nums {
     font-feature-settings: "tnum";
     font-variant-numeric: tabular-nums;
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-slideInRight {
+    animation: slideInRight 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.22s ease-out forwards;
   }
 }

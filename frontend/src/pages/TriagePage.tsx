@@ -84,7 +84,7 @@ export const TriagePage: React.FC = () => {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 animate-slide-up">
       {/* HEADER BANNER */}
       <div className="bg-surface rounded-lg border border-surface-border p-4 shadow-panel flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div className="flex items-start gap-3">

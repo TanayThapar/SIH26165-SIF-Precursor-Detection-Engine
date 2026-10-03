@@ -56,7 +56,7 @@ export const SiteRiskPage: React.FC = () => {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 animate-slide-up">
       {/* EXPLANATORY EMPIRICAL BAYES BANNER */}
       <div className="bg-petrol-900 text-white rounded-lg p-5 shadow-panel flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div className="flex items-start gap-3">

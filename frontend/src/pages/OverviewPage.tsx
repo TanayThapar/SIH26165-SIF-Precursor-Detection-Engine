@@ -76,7 +76,7 @@ export const OverviewPage: React.FC = () => {
   const { kpis, timeSeries, topSites, lsrDistribution, barrierFailures } = data;
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 animate-slide-up">
       {/* KPI STRIP */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
         <MetricCard

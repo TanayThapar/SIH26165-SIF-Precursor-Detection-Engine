@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { FilterProvider } from './context/FilterContext';
 import { DrawerProvider } from './context/DrawerContext';
+import { ThemeProvider } from './context/ThemeContext';
 import { AppShell } from './components/layout/AppShell';
 
 // Route-level code splitting for performance and fast initial load
@@ -50,28 +51,30 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <FilterProvider>
-          <DrawerProvider>
-            <React.Suspense fallback={<PageLoadingFallback />}>
-              <Routes>
-                <Route element={<AppShell />}>
-                  <Route path="/" element={<Navigate to="/overview" replace />} />
-                  <Route path="/overview" element={<OverviewPage />} />
-                  <Route path="/analyze" element={<AnalyzerPage />} />
-                  <Route path="/hidden-risk" element={<HiddenRiskPage />} />
-                  <Route path="/risk-ranking" element={<SiteRiskPage />} />
-                  <Route path="/precursor-graph" element={<PrecursorGraphPage />} />
-                  <Route path="/drift" element={<DriftAlertsPage />} />
-                  <Route path="/triage" element={<TriagePage />} />
-                  <Route path="/evaluation" element={<EvaluationPage />} />
-                  <Route path="*" element={<Navigate to="/overview" replace />} />
-                </Route>
-              </Routes>
-            </React.Suspense>
-          </DrawerProvider>
-        </FilterProvider>
-      </BrowserRouter>
+      <ThemeProvider>
+        <BrowserRouter>
+          <FilterProvider>
+            <DrawerProvider>
+              <React.Suspense fallback={<PageLoadingFallback />}>
+                <Routes>
+                  <Route element={<AppShell />}>
+                    <Route path="/" element={<Navigate to="/overview" replace />} />
+                    <Route path="/overview" element={<OverviewPage />} />
+                    <Route path="/analyze" element={<AnalyzerPage />} />
+                    <Route path="/hidden-risk" element={<HiddenRiskPage />} />
+                    <Route path="/risk-ranking" element={<SiteRiskPage />} />
+                    <Route path="/precursor-graph" element={<PrecursorGraphPage />} />
+                    <Route path="/drift" element={<DriftAlertsPage />} />
+                    <Route path="/triage" element={<TriagePage />} />
+                    <Route path="/evaluation" element={<EvaluationPage />} />
+                    <Route path="*" element={<Navigate to="/overview" replace />} />
+                  </Route>
+                </Routes>
+              </React.Suspense>
+            </DrawerProvider>
+          </FilterProvider>
+        </BrowserRouter>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }
