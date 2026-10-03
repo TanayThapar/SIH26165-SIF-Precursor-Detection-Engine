@@ -425,7 +425,7 @@ export const ReportDrawer: React.FC<ReportDrawerProps> = ({
           {/* Bottom Footer */}
           <div className="p-3 bg-surface-sunken border-t border-surface-border flex items-center justify-between text-xs text-graphite-600">
             <span>
-              OIL SIF Precursor Detection Engine • SIH26165
+              FaultLine • SIF Precursor Detection Engine • SIH26165
             </span>
             <button
               type="button"

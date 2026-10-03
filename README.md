@@ -1,13 +1,14 @@
-# SIF Precursor Detection Engine
+# FaultLine — SIF Precursor Detection Engine
 ### Smart India Hackathon — SIH26165 | Oil India Limited
 
-> **"The absence of injury does not imply the absence of fatal potential."**
+> **"Detecting the fracture before the failure."**  
+> *"The absence of injury does not imply the absence of fatal potential."*
 
 ---
 
 ## 1. Product Overview
 
-The **SIF Precursor Detection Engine** is an industrial safety analytics and AI/NLP platform built for **Oil India Limited (OIL)** under **Smart India Hackathon problem statement SIH26165**.
+**FaultLine** is an industrial safety analytics and AI/NLP decision-support platform built for **Oil India Limited (OIL)** under **Smart India Hackathon problem statement SIH26165**.
 
 In oil & gas drilling, workover, and pipeline operations, incident reports frequently include outcome-biased statements such as:
 - *"No injury occurred"*

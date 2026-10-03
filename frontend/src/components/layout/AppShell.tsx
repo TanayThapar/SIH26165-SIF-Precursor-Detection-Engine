@@ -89,7 +89,7 @@ export const AppShell: React.FC = () => {
     switch (location.pathname) {
       case '/overview':
         return {
-          title: 'Executive Overview',
+          title: 'FaultLine Executive Overview',
           subtitle: 'Outcome-blind safety risk intelligence across all Oil India operational assets',
         };
       case '/analyze':
@@ -129,8 +129,8 @@ export const AppShell: React.FC = () => {
         };
       default:
         return {
-          title: 'SIF Precursor Detection Engine',
-          subtitle: 'Smart India Hackathon • SIH26165 • Oil India Limited',
+          title: 'FaultLine Engine',
+          subtitle: 'SIF Precursor Detection Engine • Oil India Limited (SIH26165)',
         };
     }
   };
@@ -162,14 +162,14 @@ export const AppShell: React.FC = () => {
             <div>
               <div className="flex items-center gap-1.5">
                 <span className="text-xs font-black tracking-widest text-white uppercase">
-                  OIL INDIA
+                  FAULTLINE
                 </span>
                 <span className="text-[9px] font-bold px-1 rounded bg-petrol-900 text-petrol-300 border border-petrol-700">
-                  SIH26165
+                  OIL INDIA
                 </span>
               </div>
               <p className="text-[10px] text-petrol-400 font-medium tracking-tight">
-                SIF Precursor Engine
+                SIF Precursor Detection Engine
               </p>
             </div>
           </div>
