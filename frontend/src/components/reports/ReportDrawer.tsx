@@ -16,8 +16,6 @@ import {
   MapPin,
   Wrench,
   CheckCircle,
-  AlertTriangle,
-  Send,
   ShieldAlert,
   ArrowRight,
   UserCheck,
@@ -49,14 +47,15 @@ export const ReportDrawer: React.FC<ReportDrawerProps> = ({
   );
   const [reviewerNotes, setReviewerNotes] = useState<string>('');
 
-  useEffect(() => {
-    if (report) {
-      setCorrectedSeverity(report.potentialSeverity);
-      setCorrectedSifFlag(report.sifFlag);
-      setReviewerNotes('');
-      setFeedbackSuccess(null);
-    }
-  }, [report]);
+  // Sync state when report changes (official React pattern for deriving state from props)
+  const [prevReportId, setPrevReportId] = useState<string | null>(null);
+  if (report && report.id !== prevReportId) {
+    setPrevReportId(report.id);
+    setCorrectedSeverity(report.potentialSeverity);
+    setCorrectedSifFlag(report.sifFlag);
+    setReviewerNotes('');
+    setFeedbackSuccess(null);
+  }
 
   // Handle ESC key to close
   useEffect(() => {

@@ -369,7 +369,7 @@ export class MockApiAdapter implements IApiClient {
     return [...reports].sort((a, b) => b.hiddenRisk - a.hiddenRisk);
   }
 
-  async getPrecursorGraph(filters?: GlobalFilterState): Promise<PrecursorGraphData> {
+  async getPrecursorGraph(_filters?: GlobalFilterState): Promise<PrecursorGraphData> {
     await delay(120);
     return MOCK_PRECURSOR_GRAPH;
   }
@@ -382,7 +382,7 @@ export class MockApiAdapter implements IApiClient {
     return driftAlertsStore.filter((d) => d.site === filters.site);
   }
 
-  async getDriftTimeSeries(alertId?: string): Promise<DriftWeeklyTimeSeries[]> {
+  async getDriftTimeSeries(_alertId?: string): Promise<DriftWeeklyTimeSeries[]> {
     await delay(70);
     return MOCK_DRIFT_TIMESERIES;
   }

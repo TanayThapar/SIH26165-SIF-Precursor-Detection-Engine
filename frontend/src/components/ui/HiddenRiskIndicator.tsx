@@ -1,5 +1,5 @@
 import React from 'react';
-import { AlertCircle, HelpCircle } from 'lucide-react';
+import { AlertCircle } from 'lucide-react';
 
 interface HiddenRiskIndicatorProps {
   hiddenRisk: number;
@@ -36,7 +36,7 @@ export const HiddenRiskIndicator: React.FC<HiddenRiskIndicatorProps> = ({
   };
 
   return (
-    <div className="inline-flex items-center gap-1.5" title="Hidden Risk = Potential Severity - Actual Severity (Project metric)">
+    <div className="inline-flex items-center gap-1.5" title={`Hidden Risk = Potential - Actual (${badgeSeverity})`}>
       <span
         className={`font-mono font-semibold rounded border inline-flex items-center gap-1 ${bgClass} ${sizeClasses[size]}`}
       >

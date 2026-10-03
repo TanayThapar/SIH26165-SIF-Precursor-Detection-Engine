@@ -1,15 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import {
   Crosshair,
-  Info,
-  Search,
   ArrowUpDown,
-  Filter,
   Eye,
-  ExternalLink,
   ChevronLeft,
   ChevronRight,
-  ShieldAlert,
 } from 'lucide-react';
 import {
   ResponsiveContainer,
@@ -23,7 +18,7 @@ import {
   ReferenceLine,
 } from 'recharts';
 import { fetchReports } from '../services';
-import { SafetyReport, SeverityLevel, SEVERITY_LEVELS } from '../types/report';
+import { SafetyReport } from '../types/report';
 import { SeverityIndicator } from '../components/ui/SeverityIndicator';
 import { HiddenRiskIndicator } from '../components/ui/HiddenRiskIndicator';
 import { RiskBadge } from '../components/ui/RiskBadge';
@@ -66,7 +61,7 @@ export const HiddenRiskPage: React.FC = () => {
   // Scatter plot data mapping
   // Add subtle jitter (±0.15) so identical coordinates (e.g. actual=1, potential=6) don't completely overlap
   const scatterData = useMemo(() => {
-    return reports.map((r, index) => {
+    return reports.map((r) => {
       // Deterministic pseudo-jitter based on report id char code
       const hash = r.id.charCodeAt(r.id.length - 1) % 10;
       const jitterX = (hash - 5) * 0.035;

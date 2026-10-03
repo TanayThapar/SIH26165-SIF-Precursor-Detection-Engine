@@ -1,6 +1,5 @@
 import { AnalyticsOverviewData } from '../types/analytics';
 import { MOCK_SITE_RANKINGS } from './rankings';
-import { ALL_SAFETY_REPORTS } from './reportsData';
 
 export const MOCK_OVERVIEW_DATA: AnalyticsOverviewData = {
   kpis: {

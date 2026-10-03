@@ -3,13 +3,7 @@ import {
   MapPin,
   Layers,
   Info,
-  ArrowUpDown,
-  TrendingUp,
-  AlertTriangle,
-  CheckCircle,
-  HelpCircle,
   ArrowRight,
-  Filter,
 } from 'lucide-react';
 import { fetchSiteRankings, fetchActivityRankings } from '../services';
 import { SiteRiskRanking, ActivityRiskRanking } from '../types/analytics';

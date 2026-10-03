@@ -1,4 +1,4 @@
-import { SafetyReport, SeverityLevel } from '../types/report';
+import { SafetyReport } from '../types/report';
 import { MOCK_REPORTS } from './reports';
 
 // Supplementary realistic incident reports across all OIL assets

@@ -2,14 +2,8 @@ import React, { useState, useEffect, useMemo } from 'react';
 import {
   CheckSquare,
   AlertTriangle,
-  Clock,
-  CheckCircle,
   Eye,
-  Filter,
   Search,
-  ShieldAlert,
-  ArrowUpDown,
-  Sparkles,
 } from 'lucide-react';
 import { fetchReports } from '../services';
 import { SafetyReport, ReviewStatus } from '../types/report';

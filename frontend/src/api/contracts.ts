@@ -2,7 +2,6 @@ import {
   SafetyReport,
   AnalysisRequestPayload,
   AnalysisResponseResult,
-  ReviewStatus,
 } from '../types/report';
 import {
   AnalyticsOverviewData,

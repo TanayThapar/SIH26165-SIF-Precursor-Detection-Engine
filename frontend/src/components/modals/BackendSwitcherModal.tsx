@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, Server, Database, CheckCircle2, AlertCircle, ArrowRight, RefreshCw } from 'lucide-react';
-import { isMockMode, getDataMode } from '../../api/client';
+import { getDataMode } from '../../api/client';
 
 interface BackendSwitcherModalProps {
   isOpen: boolean;

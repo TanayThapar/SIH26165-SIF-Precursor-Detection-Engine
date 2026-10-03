@@ -1,6 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { MockApiAdapter } from '../api/adapters/mock.adapter';
-import { SafetyReport } from '../types/report';
 
 describe('SIF Precursor Detection Engine — Core Logic & Data Adapter', () => {
   let adapter: MockApiAdapter;
